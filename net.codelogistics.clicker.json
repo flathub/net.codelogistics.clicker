@@ -1,16 +1,16 @@
 {
-    "id" : "net.codelogistics.clicker",
-    "runtime" : "org.gnome.Platform",
-    "runtime-version" : "46",
-    "sdk" : "org.gnome.Sdk",
-    "command" : "clicker",
-    "finish-args" : [
+    "id": "net.codelogistics.clicker",
+    "runtime": "org.gnome.Platform",
+    "runtime-version": "46",
+    "sdk": "org.gnome.Sdk",
+    "command": "clicker",
+    "finish-args": [
         "--share=ipc",
         "--socket=fallback-x11",
         "--device=dri",
         "--socket=wayland"
     ],
-    "cleanup" : [
+    "cleanup": [
         "/include",
         "/lib/pkgconfig",
         "/man",
@@ -21,7 +21,7 @@
         "*.la",
         "*.a"
     ],
-    "modules" : [
+    "modules": [
         {
             "name": "libportal",
             "buildsystem": "meson",
@@ -68,8 +68,8 @@
                 {
                     "type": "git",
                     "url": "https://codeberg.org/eyekay/clicker.git",
-                    "tag": "0.1.5",
-                    "commit": "cc4cc727bca6fdbcc58c02e2260e8a5e4de4278f",
+                    "tag": "0.1.6",
+                    "commit": "ae334fdbec11f9d96055405185cf6bf2c9cbf832",
                     "x-checker-data": {
                         "type": "git",
                         "tag-pattern": "^([\\d.]+)$"
