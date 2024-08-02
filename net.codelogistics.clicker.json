@@ -68,8 +68,8 @@
                 {
                     "type": "git",
                     "url": "https://codeberg.org/eyekay/clicker.git",
-                    "tag": "0.1.7",
-                    "commit": "4b281f7f770456bdec37303bdcda03d8e5e1a87b",
+                    "tag": "0.1.8",
+                    "commit": "cceef8efc4d54b26aa242471820e119fa9b5f3a6",
                     "x-checker-data": {
                         "type": "git",
                         "tag-pattern": "^([\\d.]+)$"
