@@ -51,8 +51,8 @@
             "sources": [
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/b0/49/2fe589ce1fa6ca0f05ae0b1717923650f2cc6eec6307c71fbc7789738902/libevdev-0.11.tar.gz",
-                    "sha256": "e9ca006a4df2488a60bd9a740011ee948d81904be2364f017e560169508f560f",
+                    "url": "https://files.pythonhosted.org/packages/6c/0d/70edb87d1ca6d0ad210b4e3f840b6983fab102155d8c2ce846c695fd3a1a/libevdev-0.13.tar.gz",
+                    "sha256": "5f31dcf307da0452d0623c2810096f8e35f3426e3ad8154e13baa03c616c31c6",
                     "x-checker-data": {
                         "type": "pypi",
                         "name": "libevdev"
