@@ -1,0 +1,19 @@
+{
+    "name": "python3-libevdev",
+    "buildsystem": "simple",
+    "build-commands": [
+        "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"libevdev\" --no-build-isolation"
+    ],
+    "sources": [
+        {
+            "type": "file",
+            "url": "https://files.pythonhosted.org/packages/da/81/a61deef77c83752bb28aac9373676d9f2218a53bfd7bfb9baf10c612dc3c/libevdev-0.13.1-py3-none-any.whl",
+            "sha256": "1a15dc796ecb1cba679fc564686f9efab5124efae6e41dba8f4bf377d5a72f4a",
+            "x-checker-data": {
+                "type": "pypi",
+                "name": "libevdev",
+                "packagetype": "bdist_wheel"
+            }
+        }
+    ]
+}

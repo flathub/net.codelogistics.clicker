@@ -1,7 +1,7 @@
 {
     "id": "net.codelogistics.clicker",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "48",
+    "runtime-version": "50",
     "sdk": "org.gnome.Sdk",
     "command": "clicker",
     "finish-args": [
@@ -13,15 +13,11 @@
     "cleanup": [
         "/include",
         "/lib/pkgconfig",
-        "/man",
-        "/share/doc",
-        "/share/gtk-doc",
-        "/share/man",
-        "/share/pkgconfig",
-        "*.la",
-        "*.a"
+        "/share/gir-1.0",
+        "/share/vala"
     ],
     "modules": [
+        "pypi-dependencies.json",
         {
             "name": "libportal",
             "buildsystem": "meson",
@@ -38,24 +34,6 @@
                     "x-checker-data": {
                         "type": "git",
                         "tag-pattern": "^([\\d.]+)$"
-                    }
-                }
-            ]
-        },
-        {
-            "name": "python3-libevdev",
-            "buildsystem": "simple",
-            "build-commands": [
-                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"libevdev\" --no-build-isolation"
-            ],
-            "sources": [
-                {
-                    "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/b0/49/2fe589ce1fa6ca0f05ae0b1717923650f2cc6eec6307c71fbc7789738902/libevdev-0.11.tar.gz",
-                    "sha256": "e9ca006a4df2488a60bd9a740011ee948d81904be2364f017e560169508f560f",
-                    "x-checker-data": {
-                        "type": "pypi",
-                        "name": "libevdev"
                     }
                 }
             ]
