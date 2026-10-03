@@ -1,16 +1,16 @@
 {
-    "id" : "net.codelogistics.clicker",
-    "runtime" : "org.gnome.Platform",
-    "runtime-version" : "51",
-    "sdk" : "org.gnome.Sdk",
-    "command" : "clicker",
-    "finish-args" : [
+    "id": "net.codelogistics.clicker",
+    "runtime": "org.gnome.Platform",
+    "runtime-version": "51",
+    "sdk": "org.gnome.Sdk",
+    "command": "clicker",
+    "finish-args": [
         "--share=ipc",
         "--socket=fallback-x11",
         "--device=dri",
         "--socket=wayland"
     ],
-    "cleanup" : [
+    "cleanup": [
         "/include",
         "/lib/pkgconfig",
         "/man",
@@ -21,7 +21,7 @@
         "*.la",
         "*.a"
     ],
-    "modules" : [
+    "modules": [
         {
             "name": "libportal",
             "buildsystem": "meson",
@@ -52,8 +52,8 @@
             "sources": [
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/b0/49/2fe589ce1fa6ca0f05ae0b1717923650f2cc6eec6307c71fbc7789738902/libevdev-0.11.tar.gz",
-                    "sha256": "e9ca006a4df2488a60bd9a740011ee948d81904be2364f017e560169508f560f",
+                    "url": "https://files.pythonhosted.org/packages/86/ff/4f8ab38330965168be742b772bcd151a7a052ea17b2481c43a607875d4ed/libevdev-0.13.1.tar.gz",
+                    "sha256": "dc3369cd1401767b9ecb1117cd6b73faba9038e3bd9e1695a710a9e9d9415e8d",
                     "x-checker-data": {
                         "type": "pypi",
                         "name": "libevdev"
@@ -62,10 +62,10 @@
             ]
         },
         {
-            "name" : "gtksourceview",
-            "buildsystem" : "meson",
-            "builddir" : true,
-            "config-opts" : [
+            "name": "gtksourceview",
+            "buildsystem": "meson",
+            "builddir": true,
+            "config-opts": [
                 "--libdir=lib",
                 "-Ddocumentation=false",
                 "-Dsysprof=true",
@@ -74,10 +74,10 @@
                 "-Dbuild-testsuite=false",
                 "-Dinstall-tests=true"
             ],
-            "sources" : [
+            "sources": [
                 {
-                    "type" : "git",
-                    "url" : "https://gitlab.gnome.org/GNOME/gtksourceview.git",
+                    "type": "git",
+                    "url": "https://gitlab.gnome.org/GNOME/gtksourceview.git",
                     "tag": "5.22.0",
                     "commit": "c7b52cf9f9e42035b133902a1a9b18faae00b1d0",
                     "x-checker-data": {
