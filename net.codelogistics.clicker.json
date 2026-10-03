@@ -1,40 +1,83 @@
 {
-    "id": "net.codelogistics.clicker",
-    "runtime": "org.gnome.Platform",
-    "runtime-version": "50",
-    "sdk": "org.gnome.Sdk",
-    "command": "clicker",
-    "finish-args": [
+    "id" : "net.codelogistics.clicker",
+    "runtime" : "org.gnome.Platform",
+    "runtime-version" : "51",
+    "sdk" : "org.gnome.Sdk",
+    "command" : "clicker",
+    "finish-args" : [
         "--share=ipc",
         "--socket=fallback-x11",
         "--device=dri",
         "--socket=wayland"
     ],
-    "cleanup": [
+    "cleanup" : [
         "/include",
         "/lib/pkgconfig",
-        "/share/gir-1.0",
-        "/share/vala"
+        "/man",
+        "/share/doc",
+        "/share/gtk-doc",
+        "/share/man",
+        "/share/pkgconfig",
+        "*.la",
+        "*.a"
     ],
-    "modules": [
-        "pypi-dependencies.json",
+    "modules" : [
         {
             "name": "libportal",
             "buildsystem": "meson",
             "config-opts": [
                 "-Ddocs=false",
+                "-Dtests=false",
                 "-Dintrospection=true"
             ],
             "sources": [
                 {
                     "type": "git",
                     "url": "https://github.com/flatpak/libportal.git",
-                    "tag": "0.9.1",
-                    "commit": "8f5dc8d192f6e31dafe69e35219e3b707bde71ce",
+                    "tag": "0.11.0",
+                    "commit": "fc4d62cfe131e8494c82f597f92b2234d584c367",
                     "x-checker-data": {
                         "type": "git",
                         "tag-pattern": "^([\\d.]+)$"
                     }
+                }
+            ]
+        },
+        {
+            "name": "python3-libevdev",
+            "buildsystem": "simple",
+            "build-commands": [
+                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"libevdev\" --no-build-isolation"
+            ],
+            "sources": [
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/b0/49/2fe589ce1fa6ca0f05ae0b1717923650f2cc6eec6307c71fbc7789738902/libevdev-0.11.tar.gz",
+                    "sha256": "e9ca006a4df2488a60bd9a740011ee948d81904be2364f017e560169508f560f",
+                    "x-checker-data": {
+                        "type": "pypi",
+                        "name": "libevdev"
+                    }
+                }
+            ]
+        },
+        {
+            "name" : "gtksourceview",
+            "buildsystem" : "meson",
+            "builddir" : true,
+            "config-opts" : [
+                "--libdir=lib",
+                "-Ddocumentation=false",
+                "-Dsysprof=true",
+                "-Dintrospection=enabled",
+                "-Dvapi=true",
+                "-Dbuild-testsuite=false",
+                "-Dinstall-tests=true"
+            ],
+            "sources" : [
+                {
+                    "type" : "git",
+                    "url" : "https://gitlab.gnome.org/GNOME/gtksourceview.git"
                 }
             ]
         },
@@ -45,9 +88,9 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "https://codeberg.org/eyekay/clicker.git",
-                    "tag": "0.1.8",
-                    "commit": "cceef8efc4d54b26aa242471820e119fa9b5f3a6",
+                    "url": "https://gitlab.gnome.org/eyekay/clicker.git",
+                    "tag": "0.2.0",
+                    "commit": "2cf3c9677f4a62d353e522cb7dfa02243d730bbe",
                     "x-checker-data": {
                         "type": "git",
                         "tag-pattern": "^([\\d.]+)$"
