@@ -77,7 +77,13 @@
             "sources" : [
                 {
                     "type" : "git",
-                    "url" : "https://gitlab.gnome.org/GNOME/gtksourceview.git"
+                    "url" : "https://gitlab.gnome.org/GNOME/gtksourceview.git",
+                    "tag": "5.22.0",
+                    "commit": "c7b52cf9f9e42035b133902a1a9b18faae00b1d0",
+                    "x-checker-data": {
+                        "type": "git",
+                        "tag-pattern": "^([\\d.]+)$"
+                    }
                 }
             ]
         },
